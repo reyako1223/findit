@@ -1,0 +1,24 @@
+[package]
+name = "findit"
+version = "1.0.0"
+description = "FindIt - Smart Lost & Found Matcher"
+authors = ["FindIt Team"]
+edition = "2024"
+rust-version = "1.85"
+
+[lib]
+name = "findit_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.2", features = [] }
+
+[dependencies]
+chrono = { version = "0.4.41", default-features = false, features = ["clock", "serde"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.142"
+tauri = { version = "2.11.2", features = [] }
+
+[dev-dependencies]
+tempfile = "3.20.0"
+
